@@ -1,11 +1,16 @@
-import { CountryProps } from "../types/Types"
-
+import { CountryProps } from "../types/Types";
+import { useNavigate } from 'react-router';
 
 const CountryCard = (
     { name, flags, capital, region, population }: CountryProps
 ) => {
+    const navigate = useNavigate();
     return (
-        <article className="bg-white rounded-md shadow-lg cursor-pointer">
+        <article
+            onClick={() => {
+                navigate(`/${name.common}`);
+            }}
+            className="bg-white rounded-md shadow-lg cursor-pointer">
             <img
                 className="h-[22.5vh] w-full rounded-t-md"
                 src={flags.png}
