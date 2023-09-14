@@ -10,7 +10,7 @@ const CountryCard = (
             onClick={() => {
                 navigate(`/${name.common}`);
             }}
-            className="bg-white rounded-md shadow-lg cursor-pointer">
+            className="bg-white dark:bg-dark-blue-dm rounded-md shadow-lg cursor-pointer">
             <img
                 className="h-[22.5vh] w-full rounded-t-md"
                 src={flags.png}

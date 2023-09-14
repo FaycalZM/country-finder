@@ -30,7 +30,7 @@ const CountriesContainer = () => {
         return <h1 className='text-5xl text-center mt-16'>error fetching data : {error} </h1>
     }
     return (
-        <section className="mt-8 py-2 grid grid-cols-4 gap-x-24 gap-y-16 text-very-dark-blue-lm">
+        <section className="mt-8 py-2 grid grid-cols-4 gap-x-24 gap-y-16">
             {
                 countries.length
                     ? countries.map(

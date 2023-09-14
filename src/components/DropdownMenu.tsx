@@ -13,10 +13,10 @@ const DropdownMenu = () => {
         setIsMenuOpened(prevState => !prevState);
     }
     return (
-        <div className='text-very-dark-blue-dm relative'>
+        <div className='relative'>
             <button
                 onClick={toggleMenu}
-                className='flex items-center gap-4 bg-white p-3 font-light rounded shadow'>
+                className='flex items-center gap-4 bg-white dark:bg-dark-blue-dm p-3 font-light rounded shadow'>
                 <p>Filter by Region</p>
                 {
                     isMenuOpened ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />
@@ -24,7 +24,7 @@ const DropdownMenu = () => {
             </button>
             {
                 isMenuOpened
-                    ? <div className='bg-white mt-1 rounded  flex flex-col absolute w-full shadow z-10'>
+                    ? <div className='bg-white dark:bg-dark-blue-dm mt-1 rounded  flex flex-col absolute w-full shadow z-10'>
                         {
                             regions.map((region, index) => {
                                 return <p
@@ -33,7 +33,7 @@ const DropdownMenu = () => {
                                         setFetchURL(`https://restcountries.com/v3.1/region/${region}`);
                                         toggleMenu();
                                     }}
-                                    className='px-3 py-2 cursor-pointer hover:text-very-dark-blue-lm hover:bg-very-light-gray'>{region}</p>
+                                    className='px-3 py-2 cursor-pointer hover:text-very-dark-blue-lm hover:bg-very-light-gray transition'>{region}</p>
                             })
                         }
 

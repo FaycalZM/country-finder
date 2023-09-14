@@ -19,13 +19,16 @@ const CountriesContextProvider = ({ children }: CountriesContextProviderProps) =
 
     const [countries, setCountries] = useState<Array<any>>([]);
     const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-    const [fetchURL, setFetchURL] = useState<string>("https://restcountries.com/v3.1/all?fields=name,capital,currencies,tld,region,subregion,languages,population,flags");
+    const [fetchURL, setFetchURL] = useState<string>("https://restcountries.com/v3.1/all?fields=name,capital,region,population,flags");
+    const toggleDarkMode = () => {
+        setIsDarkMode(prevState => !prevState);
+    }
     return <CountriesContext.Provider value={{
         countries,
         isDarkMode,
         fetchURL,
         setCountries,
-        setIsDarkMode,
+        toggleDarkMode,
         setFetchURL,
     }}>
         {children}

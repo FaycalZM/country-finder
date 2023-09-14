@@ -14,6 +14,6 @@ export type CountriesContextType = {
     isDarkMode: boolean;
     fetchURL: string;
     setCountries: React.Dispatch<React.SetStateAction<any[]>>;
-    setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+    toggleDarkMode: () => void;
     setFetchURL: React.Dispatch<React.SetStateAction<string>>;
 }

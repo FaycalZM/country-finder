@@ -6,7 +6,7 @@ const SearchForm = () => {
     const inputRef = useRef<HTMLInputElement>(null);
     const { setFetchURL } = useCountriesContext();
     return (
-        <form className='w-[35%] h-fit flex items-center gap-4 text-dark-gray bg-white px-6 py-3 rounded shadow'>
+        <form className='w-[35%] h-fit flex items-center gap-4 text-dark-gray dark:text-very-light-gray bg-white dark:bg-dark-blue-dm px-6 py-3 rounded shadow'>
             <BiSearchAlt2 />
             <input
                 ref={inputRef}

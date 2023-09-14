@@ -31,32 +31,32 @@ const CountryDetails = () => {
     }
 
     return (
-        <section className='bg-very-light-gray px-20 py-6 mt-8 text-very-dark-blue-lm'>
+        <section className='px-20 py-6 mt-8 '>
             <button
                 onClick={() => { navigate(-1) }}
-                className='flex gap-3 items-center bg-white px-8 py-2 rounded shadow'>
+                className='flex gap-3 items-center bg-white dark:bg-dark-blue-dm px-8 py-2 rounded shadow'>
                 <FaArrowLeftLong />
-                <p className='text-very-dark-blue-lm'>Back</p>
+                <p>Back</p>
             </button>
             <div className='mt-20 flex items-center justify-center gap-24'>
                 <img
-                    className='w-[40%] h-[45vh] '
+                    className='w-[40%] h-[45vh] rounded-md'
                     src={country.flags.png}
                     alt={`${country_name} flag`} />
                 <div className='px-4 py-3'>
                     <p className='text-3xl font-extrabold mb-8'>{country.name.common}</p>
                     <div className='flex gap-24'>
                         <div className='flex flex-col gap-2'>
-                            <p><span className='font-semibold'>Native Name : </span> {country.name.nativeName[Object.keys(country.name.nativeName)[0]].common}</p>
-                            <p><span className='font-semibold'>Population : </span>{country.population} </p>
-                            <p><span className='font-semibold'>Region : </span>{country.region} </p>
-                            <p><span className='font-semibold'>Sub Region : </span>{country.subregion} </p>
-                            <p><span className='font-semibold'>Capital : </span>{country.capital ? country.capital[0] : null} </p>
+                            <p><span className='font-extrabold'>Native Name : </span> {country.name.nativeName[Object.keys(country.name.nativeName)[0]].common}</p>
+                            <p><span className='font-extrabold'>Population : </span>{country.population} </p>
+                            <p><span className='font-extrabold'>Region : </span>{country.region} </p>
+                            <p><span className='font-extrabold'>Sub Region : </span>{country.subregion} </p>
+                            <p><span className='font-extrabold'>Capital : </span>{country.capital ? country.capital[0] : null} </p>
                         </div>
                         <div className='flex flex-col gap-2'>
-                            <p><span className='font-semibold'>Top Level Domain : </span>{country.tld} </p>
-                            <p><span className='font-semibold'>Currencies : </span>{Object.keys(country.currencies)[0]}</p>
-                            <p><span className='font-semibold'>Languages : </span>
+                            <p><span className='font-extrabold'>Top Level Domain : </span>{country.tld} </p>
+                            <p><span className='font-extrabold'>Currencies : </span>{Object.keys(country.currencies)[0]}</p>
+                            <p><span className='font-extrabold'>Languages : </span>
                                 {
                                     languages
                                         ? languages.map(
@@ -74,7 +74,7 @@ const CountryDetails = () => {
                             country.borders
                                 ? country.borders.map((border: string, index: number) => {
                                     return <span
-                                        className='shadow bg-white px-4 py-1 mr-2'
+                                        className='shadow bg-white dark:bg-dark-blue-dm px-4 py-1 mr-2'
                                         key={index}>{border}</span>
                                 })
                                 : null
