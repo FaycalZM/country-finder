@@ -14,7 +14,7 @@ const DropdownMenu = () => {
         <div className='text-very-dark-blue-dm relative'>
             <button
                 onClick={toggleMenu}
-                className='flex items-center gap-4 bg-white p-3 font-light rounded'>
+                className='flex items-center gap-4 bg-white p-3 font-light rounded shadow'>
                 <p>Filter by Region</p>
                 {
                     isMenuOpened ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />
@@ -22,7 +22,7 @@ const DropdownMenu = () => {
             </button>
             {
                 isMenuOpened
-                    ? <div className='bg-white mt-1 rounded p-3 flex flex-col gap-1 absolute w-full z-10'>
+                    ? <div className='bg-white mt-1 rounded p-3 flex flex-col gap-1 absolute w-full shadow z-10'>
                         {
                             regions.map((region, index) => {
                                 return <p key={index} className='cursor-pointer hover:text-very-dark-blue-lm'>{region}</p>

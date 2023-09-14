@@ -1,9 +1,21 @@
+import { CountryProps } from "../types/Types"
 
 
-const CountryCard = () => {
+const CountryCard = (
+    { name, flags, capital, region, population }: CountryProps
+) => {
     return (
-        <article>
-
+        <article className="bg-white rounded-md shadow-lg cursor-pointer">
+            <img
+                className="h-[22.5vh] w-full rounded-t-md"
+                src={flags.png}
+                alt={`${name.common} flag`} />
+            <div className="p-6">
+                <p className="font-extrabold text-xl pb-4">{name.common}</p>
+                <p><span className="font-semibold">Population</span> : {population} </p>
+                <p><span className="font-semibold">Region</span> : {region} </p>
+                <p><span className="font-semibold">Capital</span> : {capital[0]}</p>
+            </div>
         </article>
     )
 }
