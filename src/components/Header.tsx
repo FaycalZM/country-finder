@@ -6,13 +6,13 @@ const Header = () => {
     const { toggleDarkMode, isDarkMode } = useCountriesContext();
     console.log(isDarkMode)
     return (
-        <header className="bg-white dark:bg-dark-blue-dm px-20 py-6 flex justify-between drop-shadow-md shadow-dark-blue-dm capitalize">
-            <h1 className='text-2xl font-extrabold'>where in the world?</h1>
+        <header className="bg-white dark:bg-dark-blue-dm tablet:px-20 px-6 py-6 flex justify-between drop-shadow-md shadow-dark-blue-dm capitalize">
+            <h1 className='tablet:text-2xl text-lg font-extrabold'>where in the world?</h1>
             <button
                 onClick={() => {
                     toggleDarkMode();
                 }}
-                className="flex items-center text-lg font-semibold gap-3">
+                className="flex items-center tablet:text-lg text-base font-semibold gap-3">
                 {
                     isDarkMode ? <BsSun /> : <HiOutlineMoon />
                 }

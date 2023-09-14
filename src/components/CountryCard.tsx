@@ -12,7 +12,7 @@ const CountryCard = (
             }}
             className="bg-white dark:bg-dark-blue-dm rounded-md shadow-lg cursor-pointer">
             <img
-                className="h-[22.5vh] w-full rounded-t-md"
+                className="laptop:h-[22.5vh] tablet:h-[17.5vh] h-[25vh] w-full rounded-t-md"
                 src={flags.png}
                 alt={`${name.common} flag`} />
             <div className="p-6">

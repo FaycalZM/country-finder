@@ -31,21 +31,21 @@ const CountryDetails = () => {
     }
 
     return (
-        <section className='px-20 py-6 mt-8 '>
+        <section className='tablet:px-20 px-6 py-6 mt-8 '>
             <button
                 onClick={() => { navigate(-1) }}
                 className='flex gap-3 items-center bg-white dark:bg-dark-blue-dm px-8 py-2 rounded shadow'>
                 <FaArrowLeftLong />
                 <p>Back</p>
             </button>
-            <div className='mt-20 flex items-center justify-center gap-24'>
+            <div className='laptop:mt-20 mt-12 flex laptop:flex-row flex-col tablet:items-center justify-center laptop:gap-24 gap-12'>
                 <img
-                    className='w-[40%] h-[45vh] rounded-md'
+                    className='laptop:w-[40%] w-full laptop:h-[45vh] tablet:h-[35vh] h-[25vh] rounded-md'
                     src={country.flags.png}
                     alt={`${country_name} flag`} />
                 <div className='px-4 py-3'>
                     <p className='text-3xl font-extrabold mb-8'>{country.name.common}</p>
-                    <div className='flex gap-24'>
+                    <div className='flex tablet:flex-row flex-col tablet:gap-24 gap-12'>
                         <div className='flex flex-col gap-2'>
                             <p><span className='font-extrabold'>Native Name : </span> {country.name.nativeName[Object.keys(country.name.nativeName)[0]].common}</p>
                             <p><span className='font-extrabold'>Population : </span>{country.population} </p>
@@ -69,16 +69,19 @@ const CountryDetails = () => {
                             </p>
                         </div>
                     </div>
-                    <p className='mt-12'><span className='font-semibold mr-2'>Border Countries : </span>
+                    <p className='mt-12'><span className='font-semibold mr-2 mb-4 tablet:inline block '>Border Countries : </span>
+
                         {
                             country.borders
                                 ? country.borders.map((border: string, index: number) => {
                                     return <span
-                                        className='shadow bg-white dark:bg-dark-blue-dm px-4 py-1 mr-2'
+                                        className='shadow bg-white dark:bg-dark-blue-dm px-4 py-1 tablet:mr-2 mr-4 '
                                         key={index}>{border}</span>
                                 })
                                 : null
                         }
+
+
                     </p>
                 </div>
             </div>

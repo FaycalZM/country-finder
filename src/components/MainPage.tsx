@@ -4,7 +4,7 @@ import FilterSection from "./FilterSection"
 
 const MainPage = () => {
     return (
-        <section className="px-20 py-6">
+        <section className="tablet:px-20 px-6 py-6">
             <FilterSection />
             <CountriesContainer />
         </section>

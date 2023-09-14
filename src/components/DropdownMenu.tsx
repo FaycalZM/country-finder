@@ -13,10 +13,10 @@ const DropdownMenu = () => {
         setIsMenuOpened(prevState => !prevState);
     }
     return (
-        <div className='relative'>
+        <div className='relative tablet:w-fit w-1/2'>
             <button
                 onClick={toggleMenu}
-                className='flex items-center gap-4 bg-white dark:bg-dark-blue-dm p-3 font-light rounded shadow'>
+                className='flex items-center gap-4 bg-white dark:bg-dark-blue-dm p-3 w-full font-light rounded shadow'>
                 <p>Filter by Region</p>
                 {
                     isMenuOpened ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />
@@ -24,7 +24,7 @@ const DropdownMenu = () => {
             </button>
             {
                 isMenuOpened
-                    ? <div className='bg-white dark:bg-dark-blue-dm mt-1 rounded  flex flex-col absolute w-full shadow z-10'>
+                    ? <div className='bg-white dark:bg-dark-blue-dm mt-1 rounded flex flex-col absolute w-full shadow z-10'>
                         {
                             regions.map((region, index) => {
                                 return <p
