@@ -14,7 +14,7 @@ const CountryCard = (
                 <p className="font-extrabold text-xl pb-4">{name.common}</p>
                 <p><span className="font-semibold">Population</span> : {population} </p>
                 <p><span className="font-semibold">Region</span> : {region} </p>
-                <p><span className="font-semibold">Capital</span> : {capital[0]}</p>
+                <p><span className="font-semibold">Capital</span> : {capital ? capital[0] : null}</p>
             </div>
         </article>
     )

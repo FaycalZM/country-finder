@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from 'react-icons/md'
+import { useCountriesContext } from '../context/CountriesContextProvider';
 
 const regions = [
-    'Africa', 'America', 'Asia', 'Europe', 'Oceania'
+    'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'
 ];
 
 const DropdownMenu = () => {
     const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
+    const { setFetchURL } = useCountriesContext();
     const toggleMenu = () => {
         setIsMenuOpened(prevState => !prevState);
     }
@@ -22,10 +24,16 @@ const DropdownMenu = () => {
             </button>
             {
                 isMenuOpened
-                    ? <div className='bg-white mt-1 rounded p-3 flex flex-col gap-1 absolute w-full shadow z-10'>
+                    ? <div className='bg-white mt-1 rounded  flex flex-col absolute w-full shadow z-10'>
                         {
                             regions.map((region, index) => {
-                                return <p key={index} className='cursor-pointer hover:text-very-dark-blue-lm'>{region}</p>
+                                return <p
+                                    key={index}
+                                    onClick={() => {
+                                        setFetchURL(`https://restcountries.com/v3.1/region/${region}`);
+                                        toggleMenu();
+                                    }}
+                                    className='px-3 py-2 cursor-pointer hover:text-very-dark-blue-lm hover:bg-very-light-gray'>{region}</p>
                             })
                         }
 
