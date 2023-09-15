@@ -69,20 +69,20 @@ const CountryDetails = () => {
                             </p>
                         </div>
                     </div>
-                    <p className='mt-12'><span className='font-semibold mr-2 mb-4 tablet:inline block '>Border Countries : </span>
-
-                        {
-                            country.borders
-                                ? country.borders.map((border: string, index: number) => {
-                                    return <span
-                                        className='shadow bg-white dark:bg-dark-blue-dm px-4 py-1 tablet:mr-2 mr-4 '
-                                        key={index}>{border}</span>
-                                })
-                                : null
-                        }
-
-
-                    </p>
+                    <div className='mt-12 flex tablet:flex-row flex-col tablet:items-center justify-center'>
+                        <p className='font-extrabold mr-2'>Border Countries : </p>
+                        <div className='flex flex-wrap tablet:mt-0 mt-3 gap-y-3'>
+                            {
+                                country.borders
+                                    ? country.borders.map((border: string, index: number) => {
+                                        return <p
+                                            className='w-fit shadow bg-white dark:bg-dark-blue-dm px-4 py-1 tablet:mr-2 mr-4 '
+                                            key={index}>{border}</p>
+                                    })
+                                    : null
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
 
